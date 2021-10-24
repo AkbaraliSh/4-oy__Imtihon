@@ -1,0 +1,150 @@
+body{
+    display: flex;
+    font-family: sans-serif;
+    background-color: #17212B;
+    box-sizing: border-box;
+}
+p{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+.users__list{
+    width: 435px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    overflow-y: scroll;
+    scrollbar-color: red;
+    margin: 0;
+    padding: 0;
+}
+.user__item{
+    margin-bottom: 20px;
+    position: relative;
+    padding: 20px;
+}
+.user__item:last-child{
+    margin-bottom: 0;
+}
+.user__username{
+    padding: 5px 20px;
+    background-color: #0c1116;
+    color: aliceblue;
+    line-height: 20px;
+    border-radius: 5px
+}
+.user__id{
+    font-size: 50px;
+    font-weight: 700;
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: rgba(255, 246, 246, 0.452);
+}
+.user__name{
+    margin: 0;
+    color:dimgray;
+    margin-top: 10px;
+}
+.user__address{
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 14px;
+    color: #2bdddb;
+    margin-top: 20px;
+}
+.address__street{
+    margin-right: 5px;
+}
+.address__suite{
+    margin-right: 5px;
+}
+.address__city{
+    margin-right: 5px;
+}
+.user__company{
+    font-size: 15px;
+    color: #4ebdde;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.company__name{
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+}
+.user__phone{
+    color:#fff;
+}
+.user__email{
+    color:forestgreen;
+    display: inline-block;
+}
+.user__address--location{
+    color:darkviolet;
+}
+.show--button{
+    padding: 5px 20px;
+    margin-top: 20px;
+    margin-left: 240px;
+}
+.posts__list{
+    margin: 0;
+    padding: 20px;
+    list-style-type: none;
+    width: 470px;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.post__item{
+    width: 380px;
+    margin: 15px;
+    padding: 10px;
+    background-color: #182533;
+    color:#fff;
+}
+.post__title{
+    margin: 0;
+    margin-bottom: 10px;
+}
+.post__body{
+    margin: 0;
+    
+}
+.comments__list{
+    list-style-type: none;
+    width: 450px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    padding: 20px;
+}
+.comment__item{
+    margin: 15px;
+    padding: 10px;
+    background-color: #182533;
+    color:#fff;
+}
+.comment__name{
+    margin: 0;
+    margin-bottom: 10px;
+    display: block;
+}
+.comment__email{
+    color:forestgreen;
+    margin-bottom: 10px;
+}
