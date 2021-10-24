@@ -28,14 +28,12 @@ function Userdata(arr,node){
         clonedUsertemplate.querySelector('.user__website').href=row.website;
         clonedUsertemplate.querySelector('.show--button').textContent='Show';
         
-        
         UserFragment.appendChild(clonedUsertemplate)
         
     });
     
     node.appendChild(UserFragment)
 }
-
 
 fetch('https://jsonplaceholder.typicode.com/users/')
 .then((response) => response.json())
@@ -49,7 +47,8 @@ const PostTemplate=document.querySelector('.posts__template').content;
 
 
 function Postdata(arr,node){
-    node.innerHTML=null
+
+    node.innerHTML=null;
     
     const PostFragment=document.createDocumentFragment()
     
@@ -57,6 +56,7 @@ function Postdata(arr,node){
         
         const clonedPosttemplate=PostTemplate.cloneNode(true);
         
+        clonedPosttemplate.querySelector('.post__item').dataset.post__id = row.id;
         clonedPosttemplate.querySelector('.post__title').textContent = row.title;
         clonedPosttemplate.querySelector('.post__body').textContent=row.body;
         
@@ -69,36 +69,11 @@ function Postdata(arr,node){
     node.appendChild(PostFragment)
 }
 
-// UserList.addEventListener('click',evt=>{
-//     if(evt.target.matches('.show--button')){
-        
-// function filterPosts(userID, data) {
-//     const userPosts = data.filter((post) => {
-//         return post.userId == userID;
-//     });
-//     renderPosts(userPosts, elPostsList);
-// }
-//     }
-// })
+UserList.addEventListener('click',evt=>{
+    const BtnClick=evt.target('.show--button')
 
-
-// function filterPosts(userID, data) {
-//     const userPosts = data.filter((post) => {
-//         return post.userId == userID;
-//     });
-//     renderPosts(userPosts, PostList);
-// }
-// UserList.addEventListener("click", (evt) => {
-//     document.querySelectorAll(".user__item").forEach((li) => {
-//         li.style.opacity = "0.5";
-//     });
-//     const clickedUserId = evt.target.closest("li").dataset.user_id;
-//     evt.target.closest("li").style.opacity = "1";
-//     // elCommentsList.innerHTML = null;
-//     fetchUsers("posts", clickedUserId);
-// });
-
-
+    console.log(BtnClick);
+})
 fetch('https://jsonplaceholder.typicode.com/posts/')
 .then((response) => response.json())
 .then((Post) =>{
@@ -133,25 +108,8 @@ function Commentsdata(arr,node){
     node.appendChild(CommentFragment)
 }
 
-fetch('https://jsonplaceholder.typicode.com/comments?postId=2')
+fetch('https://jsonplaceholder.typicode.com/comments/')
 .then((response) => response.json())
 .then((comment) =>{
     Commentsdata(comment,CommentList)
 })
-
-// async function fetchComments(id) {
-//   try {
-//     const response = await fetch(
-//       "https://jsonplaceholder.typicode.com/comments?postId=" + id
-//     );
-//     const data = await response.json();
-//     renderComments(data, elCommentsList);
-//   } catch (err) {
-//     console.log(err, "error");
-//   }
-// }
-
-// elPostsList.addEventListener("click", (evt) => {
-//   const clickedPostId = evt.target.closest("li").dataset.post_id;
-//   fetchComments(clickedPostId);
-// });
